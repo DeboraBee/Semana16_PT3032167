@@ -1,7 +1,7 @@
 from flask import render_template
 from . import main
-
+from app.models import User, Role
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', usuarios = User.query.all(), user=User , role=Role)
